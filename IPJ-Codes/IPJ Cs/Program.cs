@@ -4,14 +4,22 @@ using System.IO;
 
 class Program
 {
+
+	static bool gameOpen = true;
 	static void Main(string[] args)
 	{
-		bool gameOpen = true;
+		GamePlay game = new GamePlay();
 
-		Game game = new Game();
-		do
+		while (gameOpen)
 		{
-			gameOpen = game.Play();
-		} while (gameOpen);
+			game.Play();
+		}
+		if (gameOpen == false) {
+			Console.WriteLine("Gracias por jugar");
+		}
+	}
+
+	public static void Exit() {
+		gameOpen = false;
 	}
 }

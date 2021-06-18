@@ -89,6 +89,11 @@ public class Player
 	{
 		location = Location.Inn;
 	}
+
+	public void GoToLastFloor() {
+		location = Location.Balcony;
+	}
+
 	public void DoDamage(int amount)
 	{
 		life -= amount;

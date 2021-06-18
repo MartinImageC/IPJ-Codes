@@ -1,1 +1,1 @@
-﻿public enum Location { Inn, Tower };
+﻿public enum Location { Inn, Tower, Balcony};

@@ -69,7 +69,7 @@ class Tower
 				player = Leave(player);
 				break;
 			case Options.GoToNextFloor:
-				GoToNextFloor();
+				player = GoToNextFloor(player);
 				break;
 			default:
 				break;
@@ -154,8 +154,9 @@ class Tower
 		return player;
 	}
 
-	public void GoToNextFloor()
+	public Player GoToNextFloor(Player player)
 	{
-
+		player.GoToLastFloor();
+		return player;
 	}
 }

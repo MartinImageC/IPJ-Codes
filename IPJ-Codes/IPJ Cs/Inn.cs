@@ -42,6 +42,7 @@ class Inn
 					stayInsideInn = false;
 					break;
 				default:
+					Game.goToPause();
 					break;
 			}
 		} while (stayInsideInn);
