@@ -42,7 +42,7 @@ class Inn
 					stayInsideInn = false;
 					break;
 				default:
-					Game.goToPause();
+					Game.GoToPause();
 					break;
 			}
 		} while (stayInsideInn);

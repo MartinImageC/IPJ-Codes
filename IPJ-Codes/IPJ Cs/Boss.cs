@@ -10,10 +10,13 @@ public class Boss
 	private int maxMana;
 	private int mana;
 
+	private int Defense;
 	private int MinAttack;
 	private int MaxAttack;
 
-	public Boss(string name, int maxLife, int maxMana, int minAttack, int maxAttack)
+	GamePlay game = new GamePlay();
+
+	public Boss(string name, int maxLife, int maxMana, int minAttack, int maxAttack, int Defense)
 	{
 		this.name = name;
 		this.maxLife = maxLife;
@@ -22,24 +25,23 @@ public class Boss
 		this.mana = maxMana;
 		this.MinAttack = minAttack;
 		this.MaxAttack = maxAttack;
+		this.Defense = Defense;
 	}
 
 	public Player Fight(Player player)
 	{
-		do
+		
+		Console.WriteLine("Attack = 1     -    Defend = 2");
+		int answer = Convert.ToInt32(Console.ReadLine());
+		switch (answer)
 		{
-			Console.WriteLine("Attack = 1     -    Defend = 2");
-			int answer = Convert.ToInt32(Console.ReadLine());
-			switch (answer)
-			{
-				case 1:
-					DoDamage(20);
-					break;
-				case 2:
-					Attack(player);
-					break;
-			}
-		} while (maxLife > 0);
+			case 1:
+				DoDamage(20);
+				break;
+			case 2:
+				Attack(player);
+				break;
+		}
 		return player;
 	}
 	public Player Attack(Player player)
@@ -60,16 +62,22 @@ public class Boss
 	}
 	public void DoDamage(int amount)
 	{
-		life -= amount;
+		int damage = Defense - amount;
+		life -= damage;
 		if (life <= 0)
 		{
 			Console.WriteLine("F " + name);
+			Win();
 		}
 	}
-	public bool IsDead()
-	{
-		return life <= 0;
-	}
 
+	public void Win() {
+		Console.WriteLine("Congratulations!!");
+		Console.WriteLine("You are the victorius of the tower");
+		Console.WriteLine("Now, you can return to your home as the legendary warrior who defeated the tower of a thousand doors.");
+		Console.ReadLine();
+		Console.Clear();
+		game.Play();
+	}
 }
 

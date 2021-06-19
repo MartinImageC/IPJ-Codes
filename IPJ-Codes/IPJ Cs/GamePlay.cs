@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-class GamePlay
+public class GamePlay
 {
 	public bool goToPause = false;
 	private Player player;
@@ -97,9 +97,7 @@ class GamePlay
 			StartNewGame();
 			//Console.WriteLine(error.Message);
             throw;//Informa del error.
-        }
-		
-			
+        }		
 
 	}
 

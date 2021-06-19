@@ -11,7 +11,6 @@ public class Player
 	private int mana;
 
 	private Location location;
-
 	public Player() 
 	{
 	}
@@ -100,6 +99,9 @@ public class Player
 		if (life <= 0)
 		{
 			Console.WriteLine("F");
+			Console.ReadLine();
+			Console.Clear();
+			GamePlay gamePlay = new GamePlay();
 		}
 	}
 
@@ -131,4 +133,16 @@ public class Player
 		return enemies;
 	}
 
+	public Player Inmortal(Player player)
+	{
+		const int a = 99;
+		maxLife = a;
+		return player;
+	}
+
+	public Player SpellCaster(Player player) {
+		const int b = 50;
+		maxMana = b;
+		return player;
+	}
 }

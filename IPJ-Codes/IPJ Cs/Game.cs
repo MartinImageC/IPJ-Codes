@@ -32,7 +32,7 @@ class Game
 
     public static void GoToGamePlay()
     {
-        state = State.Pause;
+        state = State.Gameplay;
     }
 }
 

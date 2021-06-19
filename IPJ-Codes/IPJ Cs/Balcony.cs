@@ -7,12 +7,9 @@ class Balcony
 {
     enum Options { Fight, Leave, Error }
 
-    private Boss boss = new Boss("Gygas", 200, 999, 35, 80);
+    private Boss boss = new Boss("Gygas", 200, 999, 35, 80, 50);
     private Options option;
-    public Balcony()
-    {
-
-    }
+    
     public Player InsideBalcony(Player player)
     {
         Console.WriteLine("You have reached The Balcony");
@@ -33,6 +30,7 @@ class Balcony
 
     public Player Leave(Player player)
     {
+        player.GoToInn();
         return player;
     }
 }
