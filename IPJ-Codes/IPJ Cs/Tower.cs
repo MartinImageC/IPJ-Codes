@@ -5,7 +5,7 @@ using System.Text;
 
 class Tower
 {
-	enum Options { Enter, Fight, Leave, GoToNextFloor, Error };
+	enum Options { Enter, Fight, Leave, GoToNextFloor, Cheats };
 	enum OnEnterOption { Leave, Fight, Error };
 	enum OnFinishFightOption { Leave, GoToNextFloor, Error };
 
@@ -71,6 +71,9 @@ class Tower
 			case Options.GoToNextFloor:
 				player = GoToNextFloor(player);
 				break;
+			case Options.Cheats:
+				Cheats.trucos(2);
+				break;
 			default:
 				break;
 		}
@@ -104,6 +107,7 @@ class Tower
 				currentOption = Options.Fight;
 				break;
 			default:
+				currentOption = Options.Cheats;
 				break;
 		}
 
@@ -140,6 +144,7 @@ class Tower
 					currentOption = Options.GoToNextFloor;
 					break;
 				default:
+					currentOption = Options.Cheats;
 					break;
 			}
 

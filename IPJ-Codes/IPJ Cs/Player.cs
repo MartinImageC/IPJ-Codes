@@ -147,4 +147,10 @@ public class Player
 		maxMana = b;
 		return player;
 	}
+
+	public Player Greedier(Player player) {
+		const int c = 999;
+		coins = c;
+		return player;
+	}
 }

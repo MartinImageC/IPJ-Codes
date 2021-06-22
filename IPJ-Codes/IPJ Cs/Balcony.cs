@@ -5,7 +5,7 @@ using System.Text;
 
 class Balcony
 {
-    enum Options { Fight, Leave, Error }
+    enum Options { Fight, Leave, Cheats, Error }
 
     private Boss boss = new Boss("Gygas", 200, 999, 35, 80, 50);
     private Options option;
@@ -23,6 +23,9 @@ class Balcony
                 break;
             case Options.Leave:
                 player = Leave(player);
+                break;
+            case Options.Cheats:
+                Cheats.trucos(3);
                 break;
         }
         return player;

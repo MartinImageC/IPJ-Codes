@@ -4,7 +4,7 @@ using System.Text;
 
 class Inn
 {
-	enum Options { Rest, GoToTower, Error };
+	enum Options { Rest, GoToTower, Cheats, Error };
 	public Player Rest(Player player)
 	{
 		player.Heal();
@@ -40,6 +40,9 @@ class Inn
 				case Options.GoToTower:
 					player.GoToTower();
 					stayInsideInn = false;
+					break;
+				case Options.Cheats:
+					Cheats.trucos(1);
 					break;
 				default:
 					Game.GoToPause();

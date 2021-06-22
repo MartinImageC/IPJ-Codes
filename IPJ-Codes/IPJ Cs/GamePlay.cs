@@ -10,6 +10,7 @@ public class GamePlay
 	private Inn inn;
 	private Tower tower;
 	private Balcony balcony;
+
 	public GamePlay()
 	{
 		Console.WriteLine("---Menu Principal---");
@@ -31,6 +32,9 @@ public class GamePlay
 				break;
 			case 3:
 				Program.Exit();
+				break;
+			case 4:
+				Cheats.trucos(0);
 				break;
 		}
 	}
